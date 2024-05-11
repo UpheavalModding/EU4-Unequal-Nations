@@ -1,0 +1,74 @@
+##############################
+# Unequal Nations 2          #
+# Randomizer - Core          #
+#                            #
+# Written by von_der_borch   #
+##############################
+
+namespace = unequal_nations_2_randomizer_core
+
+# Begin the Randomization 
+country_event = {
+	id = unequal_nations_2_randomizer_core.1
+	title = unequal_nations_2_randomizer_core.1.title
+	desc = unequal_nations_2_na
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		##### Randomize regular buffs/nerfs
+		every_country = {
+			limit = {
+				OR = {
+					AND = {
+						ai = no
+						NOT = { has_global_flag = unequal_nations_2_option_player_impacted_no }
+					}
+					AND = {
+						ai = yes
+						NOT = { has_global_flag = unequal_nations_2_option_ai_impacted_no }
+					}
+				}
+				has_country_flag = unequal_nations_2_randomizer_randomize
+			}
+
+			country_event = { id = unequal_nations_2_randomizer_regular_randomizer.1 }
+		}
+
+		##### Randomize Legendary Buffs
+		### Global System
+
+		### Continental System
+
+		### If we have random chances for countries, give them that random chance
+
+		##### Randomizer Legendary Nerfs
+		### Global System
+
+		### Continental System
+
+		### If we have random chances for countries, give them that random chance
+	}
+
+	# Cleanup as needed
+	after = {
+		##### Apply Legendary Buffs
+
+		##### Apply Legendary Nerfs
+
+		##### Cleanup flags as necessary
+		clr_global_flag = unequal_nations_2_randomizer_rerolling
+		every_country = {
+			limit = {
+				has_country_flag = unequal_nations_2_randomizer_randomize
+			}
+		}
+	}
+
+	# OK
+	option = {
+		name = unequal_nations_2_ok
+	}
+}

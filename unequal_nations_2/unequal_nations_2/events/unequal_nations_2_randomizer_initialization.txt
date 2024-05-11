@@ -1,0 +1,37 @@
+###############################
+# Unequal Nations 2           #
+# Randomizer - Initialization #
+#                             #
+# Written by von_der_borch    #
+###############################
+
+namespace = unequal_nations_2_randomizer_initialization
+
+# Initialize the Randomization
+country_event = {
+	id = unequal_nations_2_randomizer_initialization.1
+	title = unequal_nations_2_randomizer_initialization.1.title
+	desc = unequal_nations_2_na
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = unequal_nations_2_randomizer_clear_buffs_and_nerfs
+			}
+
+			clr_country_flag = unequal_nations_2_randomizer_clear_buffs_and_nerfs
+			set_country_flag = unequal_nations_2_randomizer_randomize
+		}
+
+		country_event = { id = unequal_nations_2_randomizer_core.1 }
+	}
+
+	# OK
+	option = {
+		name = unequal_nations_2_ok
+	}
+}

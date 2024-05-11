@@ -1,0 +1,631 @@
+###############################
+# Unequal Nations 2           #
+# Randomizer - Legendary Nerf #
+#                             #
+# Written by von_der_borch    #
+###############################
+
+namespace = unequal_nations_2_randomizer_legendary_nerf
+
+# Global Legendary Country Randomizer
+country_event = {
+	id = unequal_nations_2_randomizer_legendary_nerf.1
+	title = unequal_nations_2_randomizer_legendary_nerf.1.title
+	desc = unequal_nations_2_na
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		random_country = {
+			limit = {
+				has_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+				NOT = {
+					tag = REB
+					tag = PIR
+					tag = NAT
+				}
+				NOT = {
+					AND = {
+						has_country_flag = unequal_nations_2_had_legendary_nerf
+						has_global_flag = unequal_nations_2_option_disable_repeat_legendary_buffs_or_nerfs
+					}
+				}
+				OR = {
+					AND = {
+						ai = no
+						has_global_flag = unequal_nations_2_option_player_impacted_legendary
+					}
+					AND = {
+						ai = yes
+						has_global_flag = unequal_nations_2_option_ai_impacted_legendary
+					}
+				}
+				OR = {
+					AND = {
+						total_development = 1
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1
+					}
+					AND = {
+						total_development = 250
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_250
+					}
+					AND = {
+						total_development = 500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_500
+					}
+					AND = {
+						total_development = 750
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_750
+					}
+					AND = {
+						total_development = 1500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1500
+					}
+				}
+			}
+			
+			set_country_flag = unequal_nations_2_legendary_nerf_nation
+		}
+
+		every_country = {
+			clr_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+		}
+	}
+
+	# OK
+	option = {
+		name = unequal_nations_2_ok
+	}
+}
+
+# Continental Legendary Country Randomizer
+country_event = {
+	id = unequal_nations_2_randomizer_legendary_nerf.2
+	title = unequal_nations_2_randomizer_legendary_nerf.2.title
+	desc = unequal_nations_2_na
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		# Europe
+		random_country = {
+			limit = {
+				capital_scope = {
+					continent = europe
+				}
+				has_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+				NOT = {
+					tag = REB
+					tag = PIR
+					tag = NAT
+				}
+				NOT = {
+					AND = {
+						has_country_flag = unequal_nations_2_had_legendary_nerf
+						has_global_flag = unequal_nations_2_option_disable_repeat_legendary_buffs_or_nerfs
+					}
+				}
+				OR = {
+					AND = {
+						ai = no
+						has_global_flag = unequal_nations_2_option_player_impacted_legendary
+					}
+					AND = {
+						ai = yes
+						has_global_flag = unequal_nations_2_option_ai_impacted_legendary
+					}
+				}
+				OR = {
+					AND = {
+						total_development = 1
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1
+					}
+					AND = {
+						total_development = 250
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_250
+					}
+					AND = {
+						total_development = 500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_500
+					}
+					AND = {
+						total_development = 750
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_750
+					}
+					AND = {
+						total_development = 1500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1500
+					}
+				}
+			}
+			
+			set_country_flag = unequal_nations_2_legendary_nerf_nation
+		}
+		
+		# Asia
+		random_country = {
+			limit = {
+				capital_scope = {
+					continent = asia
+				}
+				has_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+				NOT = {
+					tag = REB
+					tag = PIR
+					tag = NAT
+				}
+				NOT = {
+					AND = {
+						has_country_flag = unequal_nations_2_had_legendary_nerf
+						has_global_flag = unequal_nations_2_option_disable_repeat_legendary_buffs_or_nerfs
+					}
+				}
+				OR = {
+					AND = {
+						ai = no
+						has_global_flag = unequal_nations_2_option_player_impacted_legendary
+					}
+					AND = {
+						ai = yes
+						has_global_flag = unequal_nations_2_option_ai_impacted_legendary
+					}
+				}
+				OR = {
+					AND = {
+						total_development = 1
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1
+					}
+					AND = {
+						total_development = 250
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_250
+					}
+					AND = {
+						total_development = 500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_500
+					}
+					AND = {
+						total_development = 750
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_750
+					}
+					AND = {
+						total_development = 1500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1500
+					}
+				}
+			}
+			
+			set_country_flag = unequal_nations_2_legendary_nerf_nation
+		}
+
+		# Africa
+		random_country = {
+			limit = {
+				capital_scope = {
+					continent = africa
+				}
+				has_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+				NOT = {
+					tag = REB
+					tag = PIR
+					tag = NAT
+				}
+				NOT = {
+					AND = {
+						has_country_flag = unequal_nations_2_had_legendary_nerf
+						has_global_flag = unequal_nations_2_option_disable_repeat_legendary_buffs_or_nerfs
+					}
+				}
+				OR = {
+					AND = {
+						ai = no
+						has_global_flag = unequal_nations_2_option_player_impacted_legendary
+					}
+					AND = {
+						ai = yes
+						has_global_flag = unequal_nations_2_option_ai_impacted_legendary
+					}
+				}
+				OR = {
+					AND = {
+						total_development = 1
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1
+					}
+					AND = {
+						total_development = 250
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_250
+					}
+					AND = {
+						total_development = 500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_500
+					}
+					AND = {
+						total_development = 750
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_750
+					}
+					AND = {
+						total_development = 1500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1500
+					}
+				}
+			}
+			
+			set_country_flag = unequal_nations_2_legendary_nerf_nation
+		}
+
+		# North America
+		random_country = {
+			limit = {
+				capital_scope = {
+					continent = north_america
+				}
+				has_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+				NOT = {
+					tag = REB
+					tag = PIR
+					tag = NAT
+				}
+				NOT = {
+					AND = {
+						has_country_flag = unequal_nations_2_had_legendary_nerf
+						has_global_flag = unequal_nations_2_option_disable_repeat_legendary_buffs_or_nerfs
+					}
+				}
+				OR = {
+					AND = {
+						ai = no
+						has_global_flag = unequal_nations_2_option_player_impacted_legendary
+					}
+					AND = {
+						ai = yes
+						has_global_flag = unequal_nations_2_option_ai_impacted_legendary
+					}
+				}
+				OR = {
+					AND = {
+						total_development = 1
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1
+					}
+					AND = {
+						total_development = 250
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_250
+					}
+					AND = {
+						total_development = 500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_500
+					}
+					AND = {
+						total_development = 750
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_750
+					}
+					AND = {
+						total_development = 1500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1500
+					}
+				}
+			}
+			
+			set_country_flag = unequal_nations_2_legendary_nerf_nation
+		}
+
+		# South America
+		random_country = {
+			limit = {
+				capital_scope = {
+					continent = south_america
+				}
+				has_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+				NOT = {
+					tag = REB
+					tag = PIR
+					tag = NAT
+				}
+				NOT = {
+					AND = {
+						has_country_flag = unequal_nations_2_had_legendary_nerf
+						has_global_flag = unequal_nations_2_option_disable_repeat_legendary_buffs_or_nerfs
+					}
+				}
+				OR = {
+					AND = {
+						ai = no
+						has_global_flag = unequal_nations_2_option_player_impacted_legendary
+					}
+					AND = {
+						ai = yes
+						has_global_flag = unequal_nations_2_option_ai_impacted_legendary
+					}
+				}
+				OR = {
+					AND = {
+						total_development = 1
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1
+					}
+					AND = {
+						total_development = 250
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_250
+					}
+					AND = {
+						total_development = 500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_500
+					}
+					AND = {
+						total_development = 750
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_750
+					}
+					AND = {
+						total_development = 1500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1500
+					}
+				}
+			}
+			
+			set_country_flag = unequal_nations_2_legendary_nerf_nation
+		}
+
+		# Oceania
+		random_country = {
+			limit = {
+				capital_scope = {
+					continent = oceania
+				}
+				has_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+				NOT = {
+					tag = REB
+					tag = PIR
+					tag = NAT
+				}
+				NOT = {
+					AND = {
+						has_country_flag = unequal_nations_2_had_legendary_nerf
+						has_global_flag = unequal_nations_2_option_disable_repeat_legendary_buffs_or_nerfs
+					}
+				}
+				OR = {
+					AND = {
+						ai = no
+						has_global_flag = unequal_nations_2_option_player_impacted_legendary
+					}
+					AND = {
+						ai = yes
+						has_global_flag = unequal_nations_2_option_ai_impacted_legendary
+					}
+				}
+				OR = {
+					AND = {
+						total_development = 1
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1
+					}
+					AND = {
+						total_development = 250
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_250
+					}
+					AND = {
+						total_development = 500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_500
+					}
+					AND = {
+						total_development = 750
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_750
+					}
+					AND = {
+						total_development = 1500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1500
+					}
+				}
+			}
+
+			set_country_flag = unequal_nations_2_legendary_nerf_nation
+		}
+
+		# RNW
+		random_country = {
+			limit = {
+				capital_scope = {
+					continent = new_world
+				}
+				has_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+				NOT = {
+					tag = REB
+					tag = PIR
+					tag = NAT
+				}
+				NOT = {
+					AND = {
+						has_country_flag = unequal_nations_2_had_legendary_nerf
+						has_global_flag = unequal_nations_2_option_disable_repeat_legendary_buffs_or_nerfs
+					}
+				}
+				OR = {
+					AND = {
+						ai = no
+						has_global_flag = unequal_nations_2_option_player_impacted_legendary
+					}
+					AND = {
+						ai = yes
+						has_global_flag = unequal_nations_2_option_ai_impacted_legendary
+					}
+				}
+				OR = {
+					AND = {
+						total_development = 1
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1
+					}
+					AND = {
+						total_development = 250
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_250
+					}
+					AND = {
+						total_development = 500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_500
+					}
+					AND = {
+						total_development = 750
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_750
+					}
+					AND = {
+						total_development = 1500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1500
+					}
+				}
+			}
+
+			set_country_flag = unequal_nations_2_legendary_nerf_nation
+		}
+
+		every_country = {
+			clr_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+		}
+	}
+
+	# OK
+	option = {
+		name = unequal_nations_2_ok
+	}
+}
+
+# Random Chance Legendary Country Randomizer
+country_event = {
+	id = unequal_nations_2_randomizer_legendary_nerf.3
+	title = unequal_nations_2_randomizer_legendary_nerf.3.title
+	desc = unequal_nations_2_na
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+				NOT = {
+					tag = REB
+					tag = PIR
+					tag = NAT
+				}
+				NOT = {
+					AND = {
+						has_country_flag = unequal_nations_2_had_legendary_nerf
+						has_global_flag = unequal_nations_2_option_disable_repeat_legendary_buffs_or_nerfs
+					}
+				}
+				OR = {
+					AND = {
+						ai = no
+						has_global_flag = unequal_nations_2_option_player_impacted_legendary
+					}
+					AND = {
+						ai = yes
+						has_global_flag = unequal_nations_2_option_ai_impacted_legendary
+					}
+				}
+				OR = {
+					AND = {
+						total_development = 1
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1
+					}
+					AND = {
+						total_development = 250
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_250
+					}
+					AND = {
+						total_development = 500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_500
+					}
+					AND = {
+						total_development = 750
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_750
+					}
+					AND = {
+						total_development = 1500
+						has_global_flag = unequal_nations_2_option_legendary_countries_min_size_1500
+					}
+				}
+			}
+
+			clr_country_flag = unequal_nations_2_needs_legendary_nerf_choice
+			# 1%
+			if = {
+				limit = {
+					has_global_flag = unequal_nations_2_option_legendary_nerf_random_chance_1
+				}
+
+				random_list = {
+					99 = { }
+					1 = { set_country_flag = unequal_nations_2_legendary_nerf_nation }
+				}
+			}
+			# 3%
+			if = {
+				limit = {
+					has_global_flag = unequal_nations_2_option_legendary_nerf_random_chance_3
+				}
+
+				random_list = {
+					97 = { }
+					3 = { set_country_flag = unequal_nations_2_legendary_nerf_nation }
+				}
+			}
+			# 5%
+			if = {
+				limit = {
+					has_global_flag = unequal_nations_2_option_legendary_nerf_random_chance_5
+				}
+
+				random_list = {
+					95 = { }
+					5 = { set_country_flag = unequal_nations_2_legendary_nerf_nation }
+				}
+			}
+			# 15%
+			if = {
+				limit = {
+					has_global_flag = unequal_nations_2_option_legendary_nerf_random_chance_15
+				}
+
+				random_list = {
+					85 = { }
+					15 = { set_country_flag = unequal_nations_2_legendary_nerf_nation }
+				}
+			}
+			# 25%
+			if = {
+				limit = {
+					has_global_flag = unequal_nations_2_option_legendary_nerf_random_chance_25
+				}
+
+				random_list = {
+					75 = { }
+					25 = { set_country_flag = unequal_nations_2_legendary_nerf_nation }
+				}
+			}
+			# 50%
+			if = {
+				limit = {
+					has_global_flag = unequal_nations_2_option_legendary_nerf_random_chance_50
+				}
+
+				random_list = {
+					50 = { }
+					50 = { set_country_flag = unequal_nations_2_legendary_nerf_nation }
+				}
+			}
+			# 100%
+			if = {
+				limit = {
+					has_global_flag = unequal_nations_2_option_legendary_nerf_random_chance_100
+				}
+
+				set_country_flag = unequal_nations_2_legendary_nerf_nation
+			}
+		}
+	}
+
+	# OK
+	option = {
+		name = unequal_nations_2_ok
+	}
+}

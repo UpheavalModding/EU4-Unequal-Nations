@@ -1,0 +1,46 @@
+[h1]Unequal Nations 2.0[/h1]
+Inspired by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1919755765]Unequal Countries[/url], this mod provides a random set of nerfs and buffs to nations throughout the world, providing a more dynamic world with new and unique situations.
+
+[h1]Features[/h1]
+- Full configuration of all features
+- 7 tiers and 9 categories of buffs and nerfs
+- Legendary countries with extra buffs
+- Ability for player nation to be impacted by buffs and nerfs
+- Ability to reroll buffs and nerfs midgame
+
+[h1]Legendary Country[/h1]
+[b]Legendary Countries[/b] are countries with maxed out buffs, and with an extra extremely powerful buff that makes them extremely formidable. Various settings allow there to be more than one legendary country at a time, and to set minimum development sizes for countries that are considered for being legendary allowing for the possibility of powerful "bosses" for players.
+
+[h1]Future Plans[/h1]
+- Balancing (let me know what you all think of the current balance!)
+- More settings for when to reroll buffs?
+- More tiers?
+- More categories?
+--- Might split/rebalance existing categories to support more
+- Compatibility with mods adding new Ages
+- Legendary Nerf
+- rerolls on monarch deaths
+
+[h1]Usage of this Mod[/h1]
+Feel free to use this mod in any modpack, or to create compatibility patches for this and other mods. If you want to incorporate this mod into your mod, contact one of the creators to let us know.
+
+[h1]Compatibility[/h1]
+[b]Mod Compatibility[/b] - This mod should be fully compatible with everything, unless for some reason both mods maintain files or flags with similar names.
+
+[b][u]Not[/u] Achievement Compatible[/b]
+
+[h1]Thanks[/h1]
+Big thanks to https://steamcommunity.com/sharedfiles/filedetails/?id=1919755765 for the inspiration!
+
+[h1]Recent Version[/h1]
+2.0.0:
+- Rebuilt from the ground up to be more dynamic and configurable!
+- Two different "sets" of buffs/nerfs: Ruler & Country
+---- Ruler: These are buffs/nerfs that are 
+---- Starting: These are given to all nations to generate a more dynamic starting position for all nations
+---- Dynamically Given: These are given to nations that meet certain conditions
+---- Rolled: These are given like the classic ones
+[i][url=https://raw.githubusercontent.com/UpheavalModding/UpheavalEU4Mods/main/unequal_nations/version_history]Click here for a detailed version history[/url][/i]
+
+[h1]Development/Source Code[/h1]
+Source code for the mod is available on [url=https://github.com/UpheavalModding/UpheavalEU4Mods]GitHub[/url]
