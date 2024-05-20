@@ -1,0 +1,122 @@
+##############################
+# Unequal Nations 3          #
+# Initialization             #
+#                            #
+# Written by von_der_borch   #
+##############################
+
+namespace = unequal_nations_3_initialization
+
+# Initialize the Mod
+country_event = {
+    id = unequal_nations_3_initialization.1
+    title = unequal_nations_3_initialization.1.title
+    desc = unequal_nations_3_initialization.1.desc
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    fire_only_once = yes
+    hidden = yes
+    mean_time_to_happen = { days = 0 }
+
+    trigger = {
+        NOT = {
+            has_global_flag = unequal_nations_3_initialized
+        }
+    }
+
+    immediate = {
+        set_global_flag = unequal_nations_3_initialized
+
+        ### Clear flags
+        # Player Impact
+        clr_global_flag = unequal_nations_3_configuration_player_nation_impacted_no        # Players will not have buffs/nerfs applied
+        clr_global_flag = unequal_nations_3_configuration_player_nation_impacted_tier1     # Players will have up to Tier 1 buffs/nerfs applied
+        clr_global_flag = unequal_nations_3_configuration_player_nation_impacted_tier2     # Players will have up to Tier 2 buffs/nerfs applied
+        clr_global_flag = unequal_nations_3_configuration_player_nation_impacted_tier3     # Players will have up to Tier 3 buffs/nerfs applied
+        clr_global_flag = unequal_nations_3_configuration_player_nation_impacted_legendary # Players will have up to Legendary buffs/nerfs applied
+
+        # AI Impact
+        clr_global_flag = unequal_nations_3_configuration_ai_nation_impacted_no        # AIs will not have buffs/nerfs applied
+        clr_global_flag = unequal_nations_3_configuration_ai_nation_impacted_tier1     # AIs will have up to Tier 1 buffs/nerfs applied
+        clr_global_flag = unequal_nations_3_configuration_ai_nation_impacted_tier2     # AIs will have up to Tier 2 buffs/nerfs applied
+        clr_global_flag = unequal_nations_3_configuration_ai_nation_impacted_tier3     # AIs will have up to Tier 3 buffs/nerfs applied
+        clr_global_flag = unequal_nations_3_configuration_ai_nation_impacted_legendary # AIs will have up to Legendary buffs/nerfs applied
+
+        # Legendary Buff Selection Criteria
+        clr_global_flag = unequal_nations_3_configuration_legendary_buff_seletion_criteria_global        # Whether there is a global legendary country selected
+        clr_global_flag = unequal_nations_3_configuration_legendary_buff_seletion_criteria_continental   # Whether there is a legendary country per continent
+        clr_global_flag = unequal_nations_3_configuration_legendary_buff_seletion_criteria_random_chance # Whether there is a small random chance for a country to get legendary buffs
+
+        # Legendary Nerf Selection Criteria
+        clr_global_flag = unequal_nations_3_configuration_legendary_nerf_seletion_criteria_global        # Whether there is a global legendary country selected
+        clr_global_flag = unequal_nations_3_configuration_legendary_nerf_seletion_criteria_continental   # Whether there is a legendary country per continent
+        clr_global_flag = unequal_nations_3_configuration_legendary_nerf_seletion_criteria_random_chance # Whether there is a small random chance for a country to get legendary buffs
+
+        # Golden/Dark Ages
+        clr_global_flag = unequal_nations_3_option_legendary_buff_after_legendary_nerf      # Force a Legendary Buff after a nation gets a Legendary Nerf
+        clr_global_flag = unequal_nations_3_option_legendary_nerf_after_legendary_buff      # Force a Legendary Nerf after a nation gets a Legendary Buff
+        clr_global_flag = unequal_nations_3_option_disable_repeat_legendary_buffs_or_nerfs  # Only allow a single Legendary Buff/Nerf for a nation in a game
+
+        # Legendary Buff Random Chances
+        clr_global_flag = unequal_nations_3_option_legendary_buff_random_chance_1
+        clr_global_flag = unequal_nations_3_option_legendary_buff_random_chance_3
+        clr_global_flag = unequal_nations_3_option_legendary_buff_random_chance_5
+        clr_global_flag = unequal_nations_3_option_legendary_buff_random_chance_15
+        clr_global_flag = unequal_nations_3_option_legendary_buff_random_chance_25
+        clr_global_flag = unequal_nations_3_option_legendary_buff_random_chance_50
+        clr_global_flag = unequal_nations_3_option_legendary_buff_random_chance_100
+
+        # Legendary Nerf Random Chances
+        clr_global_flag = unequal_nations_3_option_legendary_nerf_random_chance_1
+        clr_global_flag = unequal_nations_3_option_legendary_nerf_random_chance_3
+        clr_global_flag = unequal_nations_3_option_legendary_nerf_random_chance_5
+        clr_global_flag = unequal_nations_3_option_legendary_nerf_random_chance_15
+        clr_global_flag = unequal_nations_3_option_legendary_nerf_random_chance_25
+        clr_global_flag = unequal_nations_3_option_legendary_nerf_random_chance_50
+        clr_global_flag = unequal_nations_3_option_legendary_nerf_random_chance_100
+
+        # Legendary Min Country Development/Size for Buffs/Nerfs
+        clr_global_flag = unequal_nations_3_option_legendary_countries_min_size_1
+        clr_global_flag = unequal_nations_3_option_legendary_countries_min_size_250
+        clr_global_flag = unequal_nations_3_option_legendary_countries_min_size_500
+        clr_global_flag = unequal_nations_3_option_legendary_countries_min_size_750
+        clr_global_flag = unequal_nations_3_option_legendary_countries_min_size_1500
+
+        # When to Reroll Buffs/Nerfs
+        clr_global_flag = unequal_nations_3_option_reroll_on_monarch_death  # Reroll on Monarch/Ruler deaths (20 years min)
+        clr_global_flag = unequal_nations_3_option_reroll_min_years_20  # Reroll only happens after 20 years minimum
+
+        ### Clear Country Flags
+        every_country = {
+            clr_country_flag = unequal_nations_3_settings_host
+        }
+
+        ### Default Settings
+        set_global_flag = unequal_nations_3_configuration_player_nation_impacted_tier3
+        set_global_flag = unequal_nations_3_configuration_ai_nation_impacted_legendary
+        set_global_flag = unequal_nations_3_configuration_legendary_buff_seletion_criteria_random_chance
+        set_global_flag = unequal_nations_3_configuration_legendary_buff_seletion_criteria_continental
+        set_global_flag = unequal_nations_3_configuration_legendary_nerf_seletion_criteria_random_chance
+        set_global_flag = unequal_nations_3_option_legendary_buff_random_chance_3
+        set_global_flag = unequal_nations_3_option_legendary_nerf_random_chance_1
+        set_global_flag = unequal_nations_3_option_legendary_countries_min_size_250
+        set_global_flag = unequal_nations_3_option_reroll_on_monarch_death
+        set_global_flag = unequal_nations_3_option_reroll_min_years_20
+    }
+
+    after = {
+        # Choose a random player to be host
+        random_country = {
+            limit = {
+                ai = no
+            }
+            set_country_flag = unequal_nations_3_settings_host
+            country_event = { id = unequal_nations_3_about.1 }
+        }
+    }
+
+	# OK
+	option = {
+		name = unequal_nations_3_ok
+	}
+}
